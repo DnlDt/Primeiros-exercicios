@@ -1,0 +1,11 @@
+let pessoas, carne, cerveja, agua, refri
+pessoas = Number(prompt("Numero de pessoas:"))
+carne = Number(carne = pessoas*0.5)
+cerveja = Number(cerveja = pessoas *1)
+agua = Number(agua = pessoas * 0.5)
+refri = Number(refri = pessoas *0.2)
+alert("Como o numero de pessoas e de " + pessoas + " Voce vai precisar de:")
+alert(carne + "KG de carne")
+alert(cerveja + "L de cerveja")
+alert(agua + "L de agua")
+alert(refri + "L de refri")
