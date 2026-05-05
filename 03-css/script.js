@@ -1,3 +1,4 @@
+let resposta = document.getElementById('resultado')
 function verificarprovisao(){
     let marujos, comida
     let comidaPorMarujo
@@ -21,5 +22,31 @@ function calcularPrecoBrique(){
     console.log("Preço para venda: R$" +precovenda.toFixed(2))
     if(precoCompra >0 && precovenda >0){ 
     document.getElementById("resultado").innerHTML = "Preco para venda: R$" + precovenda.toFixed(2)
+    }
+}
+function verificarIdade(){
+    let idade
+    idade = Number(prompt("Digite sua idade:"))
+    if(idade>= 18){
+        resposta.innerHTML = "Você é maior de idade"
+    }else{
+        resposta.innerHTML = "Você é menor de idade"
+    }
+}
+
+function advinharnumero(){
+    // let numero = Math.round(Math.random()*10) //0...10
+    // let numero = Math.floor(Math.random()*10) //0..9
+    let numero = Math.ceil(Math.random()*3) //1..10
+    // console.log(numero);
+    // numero = numero *10
+    // console.log(numero);
+    // numero = Math.ceil(numero)
+    // console.log(numero)
+    let chute = Number(prompt("Chuta ai:"))
+    if(chute == numero){
+        resposta.innerHTML = "Acertou"
+    }else{
+        resposta.innerHTML = "Errou!"
     }
 }

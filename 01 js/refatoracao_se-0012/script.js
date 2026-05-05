@@ -1,3 +1,4 @@
+let resposta = document.getElementById("resultado")
 function teletrans(){
     let frete, peso, distancia, volume
     peso = Number(prompt("Peso(KG):"))
@@ -43,4 +44,99 @@ function pepequeno(){
         console.log("Valor a receber: R$" + total.toFixed(2))
     }
     //botando 2 decimais: tofixed(2)
+}
+
+function guilherme_portoes(){
+    //exercicio 03 - guilherme portoes
+    let clt, estagiarios, pj,totaldevs,total
+    clt = Number(prompt("Devs CLTs:"))
+    estagiarios = Number(prompt("Devs estagiarios:"))
+    pj = Number(prompt("Devs PJ:"))
+    totaldevs = clt + estagiarios + pj
+    total = totaldevs /2 
+    if(clt > total){
+        resposta.innerHTML = "Mais de metade dos Devs contratados são CLTs"
+    }else{
+        resposta.innerHTML = "Menos de metade dos Devs contratados são CLTs"
+    }
+    resposta.innerHTML += "<br>O total de devs na empresa é de " + totaldevs
+}
+
+function Trajeto_Pomar(){
+    let inicial, final, vendidas
+    inicial = Number(prompt("Quantidade inicial de laranjas:"))
+    final = Number(prompt("Quantidade final de laranjas: "))
+    vendidas = inicial - final
+    if(final <=0){
+        resposta.innerHTML = "Você vendeu " + vendidas + " laranjas"
+        resposta.innerHTML += "<br>AVISO: O estoque deve ser maior amanhã"
+    }else{
+        resposta.innerHTML = "Você vendeu um total de " + vendidas + " laranjas"
+    }
+}
+
+function kowalski(){ //INCOMPLETO
+    let relatorio_pf, relatorio_pj, tempo_pf,tempo_pj, valor_total_pf, valor_total_pj,qtd_total_relatorios,tempo_total_trabalhado, valor_total_recebido, media_valor_relatorio_pf, media_valor_relatorio_pj
+    let mediatempogasto_pf, mediatempogasto_pj
+    relatorio_pf = Number(prompt("Relatorios PF:"))
+    relatorio_pj = Number(prompt("Relatórios PJ:"))
+    tempo_pf = Number(prompt("Tempo para elaborar relatórios PF:"))
+    tempo_pj = Number(prompt("Tempo para elaborar relatórios PJ:"))
+    valor_total_pf = Number(prompt("Valor recebido relatorios PF:"))
+    valor_total_pj = Number(prompt("Valor recebido relatorios PJ:"))
+    qtd_total_relatorios = relatorio_pf + relatorio_pj
+    tempo_total_trabalhado = tempo_pf + tempo_pj
+    valor_total_recebido = valor_total_pf + valor_total_pj
+    media_valor_relatorio_pf = valor_total_pf /relatorio_pf
+    media_valor_relatorio_pj = valor_total_pj / relatorio_pj
+    mediatempogasto_pf = tempo_pf / relatorio_pf
+    mediatempogasto_pj = tempo_pj / relatorio_pj
+    resposta.innerHTML = "Quantidade total de relatorios: " +qtd_total_relatorios
+    resposta.innerHTML += "<br>Tempo total trabalhado: " + tempo_total_trabalhado
+    resposta.innerHTML += "<br>Valor total recebido: " + valor_total_recebido
+    resposta.innerHTML +="<br>Média de valor recebido por relatórios PF: " + media_valor_relatorio_pf.toFixed(2)
+    resposta.innerHTML +="<br>Média de valor recebido por relatórios PJ: " + media_valor_relatorio_pj.toFixed(2)
+    resposta.innerHTML +="<br>Média tempo gasto por relatórios PF:" + mediatempogasto_pf.toFixed(2)
+    resposta.innerHTML +="<br>Média tempo gasto relatórios PJ:" + mediatempogasto_pj.toFixed(2)
+}
+function Pe_ernan(){
+    let custos, doacoes, pagamento
+    custos = Number(prompt("Custos da igreja:"))
+    doacoes = Number(prompt("Doações recebidas(dia):"))
+    pagamento = custos - doacoes
+    if(pagamento>0){
+        resposta.innerHTML = "Faltam R$" + pagamento + " para pagar os custos"
+        resposta.innerHTML += "<br>A meta não foi atingida. As pessoas podem contribuir mais "
+    }else if(pagamento <=0){
+        resposta.innerHTML = "<br>A meta foi atingida"
+    }
+
+}
+function capitao_ganso(){
+    let gasto, faturamento_ingressos, faturamento_venda,lucro, lucro_percentual
+    gasto = Number(prompt("Gasto com suprimentos/mercadorias:"))
+    faturamento_ingressos = Number(prompt("Faturamento em venda de ingressos:"))
+    faturamento_venda = Number(prompt("Faturamento em venda de itens:"))
+    lucro = faturamento_ingressos + faturamento_venda - gasto
+    lucro_percentual = (lucro/gasto) *100
+    resposta.innerHTML = "O seu lucro total foi de " + lucro
+    resposta.innerHTML +="<br>Seu lucro percentual foi de " + lucro_percentual.toFixed(2) + "%"
+    if(faturamento_ingressos > faturamento_venda){
+        resposta.innerHTML += "<br>Você fatura mais com vendas de ingresso"
+    }else if(faturamento_venda> faturamento_ingressos){ 
+        resposta.innerHTML += "<br>Você fatura mais com venda de itens"
+    }else if(faturamento_ingressos == faturamento_venda){
+        resposta.innerHTML += "<br>O faturamento de ingresso e o faturamento em venda de itens são iguais"
+    }
+}
+function Junin(){
+    let salario, dias,totaldia, semanal, freela
+    salario = Number(prompt("Salário:"))
+    dias = Number(prompt("Dias trabalhados"))
+    freela = Number(prompt("Total ganho com bicos: R$"))
+    totaldia = salario/dias
+    semanal = totaldia *5
+    resposta.innerHTML ="Você recebe R$" + totaldia.toFixed(2) + " por dia"
+    resposta.innerHTML +="<br>Salário semanal: R$" + semanal.toFixed(2)
+
 }
