@@ -75,8 +75,8 @@ function Trajeto_Pomar(){
     }
 }
 
-function kowalski(){ //INCOMPLETO
-    let relatorio_pf, relatorio_pj, tempo_pf,tempo_pj, valor_total_pf, valor_total_pj,qtd_total_relatorios,tempo_total_trabalhado, valor_total_recebido, media_valor_relatorio_pf, media_valor_relatorio_pj
+function kowalski(){
+    let relatorio_pf, relatorio_pj, tempo_pf,tempo_pj, valor_total_pf,relatorio, valor_total_pj,qtd_total_relatorios,tempo_total_trabalhado, valor_total_recebido, media_valor_relatorio_pf, media_valor_relatorio_pj
     let mediatempogasto_pf, mediatempogasto_pj
     relatorio_pf = Number(prompt("Relatorios PF:"))
     relatorio_pj = Number(prompt("Relatórios PJ:"))
@@ -91,6 +91,12 @@ function kowalski(){ //INCOMPLETO
     media_valor_relatorio_pj = valor_total_pj / relatorio_pj
     mediatempogasto_pf = tempo_pf / relatorio_pf
     mediatempogasto_pj = tempo_pj / relatorio_pj
+    relatorio = "Parabéns pelo seu trabalho"
+    if(media_valor_relatorio_pf > media_valor_relatorio_pj && relatorio_pf > relatorio_pj){
+        relatorio = "Parabéns! você está investindo nos relatórios PF que estão tendo mais retorno!"
+    }else if(media_valor_relatorio_pj > media_valor_relatorio_pf && relatorio_pj > relatorio_pf){
+        relatorio = "Você está investindo seu tempo nos relatórios pj que estão tendo mais retorno, parabéns!"
+    }
     resposta.innerHTML = "Quantidade total de relatorios: " +qtd_total_relatorios
     resposta.innerHTML += "<br>Tempo total trabalhado: " + tempo_total_trabalhado
     resposta.innerHTML += "<br>Valor total recebido: " + valor_total_recebido
@@ -98,7 +104,9 @@ function kowalski(){ //INCOMPLETO
     resposta.innerHTML +="<br>Média de valor recebido por relatórios PJ: " + media_valor_relatorio_pj.toFixed(2)
     resposta.innerHTML +="<br>Média tempo gasto por relatórios PF:" + mediatempogasto_pf.toFixed(2)
     resposta.innerHTML +="<br>Média tempo gasto relatórios PJ:" + mediatempogasto_pj.toFixed(2)
+    resposta.innerHTML += "<br><br><strong>Conclusão: " + relatorio
 }
+
 function Pe_ernan(){
     let custos, doacoes, pagamento
     custos = Number(prompt("Custos da igreja:"))
@@ -130,13 +138,35 @@ function capitao_ganso(){
     }
 }
 function Junin(){
-    let salario, dias,totaldia, semanal, freela
+    let salario, dias,totaldia, semanal, freela,mensal, porcentagem
     salario = Number(prompt("Salário:"))
     dias = Number(prompt("Dias trabalhados"))
     freela = Number(prompt("Total ganho com bicos: R$"))
     totaldia = salario/dias
     semanal = totaldia *5
-    resposta.innerHTML ="Você recebe R$" + totaldia.toFixed(2) + " por dia"
+    mensal = semanal * 4
+    mensal = mensal + freela
+    porcentagem = (freela/mensal) * 100
+    resposta.innerHTML ="<br>Você recebe R$" + totaldia.toFixed(2) + " por dia"
     resposta.innerHTML +="<br>Salário semanal: R$" + semanal.toFixed(2)
+    resposta.innerHTML +="<br>" + porcentagem + "% da sua renda vem de bicos"
+}
 
+function peba(){
+    let vitorias, empates,aproveitamento, jogos, camp
+    let pontos
+    jogos = Number(prompt("Numero de jogos"))
+    vitorias = prompt ("Vitórias:")
+    vitorias = Number(vitorias)
+    empates = prompt ("Empates:")
+    empates = Number(empates)
+    vitorias = vitorias * 3
+    pontos = vitorias + empates
+    aproveitamento = pontos / (jogos*3) * 100
+    if(aproveitamento>70){
+        camp = "Parabéns! Você está concorrendo ao titulo do campeonato!"
+    }
+    resposta.innerHTML = camp
+    resposta.innerHTML += "O total de pontos do seu time no campeonato foi de " + pontos
+    resposta.innerHTML += "<br>" + aproveitamento.toFixed(2) + "%"
 }

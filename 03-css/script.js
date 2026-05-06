@@ -43,10 +43,41 @@ function advinharnumero(){
     // console.log(numero);
     // numero = Math.ceil(numero)
     // console.log(numero)
-    let chute = Number(prompt("Chuta ai:"))
+    let chute = Number(prompt("Chuta ai(1-7):"))
     if(chute == numero){
         resposta.innerHTML = "Acertou"
     }else{
         resposta.innerHTML = "Errou!"
+    }
+}
+
+function verificardiasemana(){
+    let numero, dia 
+    numero = Number(prompt("Digita o numero:"))
+    if(numero == 1){
+        dia = "Domingo"
+    }else if(numero == 2){
+        dia = "Segunda"
+    }else if(numero == 3){
+        dia = "Terça"
+    }else if(numero ==4){
+        dia = "Quarta"
+    }else if(numero == 5){
+        dia = "Quinta"
+    }else if(numero == 6){
+        dia = "Sexta"
+    }else if(numero == 7){
+        dia = "Sábado"
+    }else{
+        dia = "Número incorreto. Por favor tente novamente"
+    }
+    document.getElementById("resultado").innerHTML = "Dia escolhido: " + dia
+}
+function parimpar(){
+    let n = Number(prompt("Digite numero:"))
+    if(n%2 == 0){
+        alert("Par")
+    }else if(n%2 == 1){
+        alert("Impar")
     }
 }
