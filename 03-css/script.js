@@ -1,4 +1,4 @@
-let resposta = document.getElementById('resultado')
+let resposta = document.getElementById("resultado")
 function verificarprovisao(){
     let marujos, comida
     let comidaPorMarujo
@@ -37,7 +37,7 @@ function verificarIdade(){
 function advinharnumero(){
     // let numero = Math.round(Math.random()*10) //0...10
     // let numero = Math.floor(Math.random()*10) //0..9
-    let numero = Math.ceil(Math.random()*3) //1..10
+    let numero = Math.ceil(Math.random()*7) //1..10
     // console.log(numero);
     // numero = numero *10
     // console.log(numero);
@@ -80,4 +80,29 @@ function parimpar(){
     }else if(n%2 == 1){
         alert("Impar")
     }
+}
+
+function verificarmeta(){
+    let totalbruto, premiacoes, presentes, comissoes,meta, prejuizo
+    totalbruto = Number(prompt("Total bruto:"))
+    premiacoes = Number(Prompt("Preamiações:"))
+    presentes = Number(prompt("Presentes:"))
+    comissoes = Number(prompt("Comissoes: "))
+    meta = Number(prompt("Meta:"))
+    lucro = totalbruto - premiacoes - presentes - comissoes
+    let mensagem = ""
+    if(lucro >=meta){
+        mensagem = "Batemos a meta, lucro de R$" + lucro
+    }else{
+        //nao bateu a meta
+        if(lucro>0){
+            //sem meta mas com lucro
+            mensagem = "Não batemos a meta, mas tivemos lucro de R$" + lucro
+        }else{
+            //sem meta e prejuizo
+            let prejuizo = lucro *-1
+            mensagem = "Nao batemos a meta e ainda tivemos prejuizo" +prejuizo.tofixed(2)
+        }
+    }
+    resposta.innerHTML = "<br>Lucro de hoje: R$" + lucro.tofixed(2).replace(".",",") + "<br>" + mensagem // replacevai trocar um caractere por outro, nesse caso vai procurar o ponto e trocar pela virgula
 }

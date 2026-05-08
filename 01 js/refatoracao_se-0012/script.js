@@ -153,7 +153,7 @@ function Junin(){
 }
 
 function peba(){
-    let vitorias, empates,aproveitamento, jogos, camp
+    let vitorias, empates,aproveitamento, jogos
     let pontos
     jogos = Number(prompt("Numero de jogos"))
     vitorias = prompt ("Vitórias:")
@@ -164,9 +164,50 @@ function peba(){
     pontos = vitorias + empates
     aproveitamento = pontos / (jogos*3) * 100
     if(aproveitamento>70){
-        camp = "Parabéns! Você está concorrendo ao titulo do campeonato!"
+        resposta.innerHTML = "Parabéns! Você está concorrendo ao titulo do campeonato!"
     }
-    resposta.innerHTML = camp
-    resposta.innerHTML += "O total de pontos do seu time no campeonato foi de " + pontos
-    resposta.innerHTML += "<br>" + aproveitamento.toFixed(2) + "%"
+    resposta.innerHTML += "<br>O total de pontos do seu time no campeonato foi de " + pontos
+    resposta.innerHTML += "<br>Seu aproveitamento foi de " + aproveitamento.toFixed(2) + "%"
+} 
+function gael(){
+    let caminhao_jare, preco_caminhao, jare, faturamento, custo, lucro, mensagem,quantidade_jare, passada
+    passada = Number(prompt("Caminhões de jarés vendidos nas temp passada:"))
+    caminhao_jare = Number(prompt("Quantidade de caminhoes vendidos nessa temporada:"))
+    preco_caminhao = 450
+    jare = 90
+    quantidade_jare = caminhao_jare * 50
+    faturamento = quantidade_jare * 90
+    custo = preco_caminhao * caminhao_jare
+    lucro = faturamento - custo
+    if(passada > caminhao_jare){
+        mensagem = "Na temporada passada foram vendidos mais jarés"
+    }else if(caminhao_jare >passada){
+        mensagem = "Nessa temporada você vendeu mais jarés do que na temporada anterior"
+    }else{
+        mensagem = "Você vendeu a mesma quantidade de jarés que na temp passada"
+    }
+    resposta.innerHTML = "Jarés vendidos: " + quantidade_jare
+    resposta.innerHTML += "<br>Faturamento: R$" + faturamento
+    resposta.innerHTML += "<br>custo: R$" + custo
+    resposta.innerHTML += "<br>Lucro: R$" + lucro
+    resposta.innerHTML += "<br>" +mensagem
+}
+function telebala(){
+    let peso, tara, carga,limite_liquido, limite_pesobruto,liquido,mensagem
+    mensagem = ""
+    limite_liquido = Number(prompt("Limite do peso liquido:"))
+    limite_pesobruto = Number(prompt("Limite de peso bruto:"))
+    liquido = Number(prompt("Peso liquido:"))
+    peso = Number(prompt("Peso bruto:"))
+    tara = Number(prompt("Tara(KG):"))
+    carga = peso - tara
+    if (liquido > limite_liquido && peso > limite_pesobruto){ 
+        mensagem = "AVISO: Peso bruto e peso liquido ultrapassados"
+    }else if(liquido > limite_liquido){
+        mensagem = "Peso liquido ultrapassado"
+    }else if(peso > limite_pesobruto){
+        mensagem = "Peso Bruto ultrapassado"
+    }
+    resposta.innerHTML = mensagem
+    resposta.innerHTML += "<br>A carga é de " + carga + "KG"
 }
