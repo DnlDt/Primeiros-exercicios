@@ -106,3 +106,21 @@ function verificarmeta(){
     }
     resposta.innerHTML = "<br>Lucro de hoje: R$" + lucro.tofixed(2).replace(".",",") + "<br>" + mensagem // replacevai trocar um caractere por outro, nesse caso vai procurar o ponto e trocar pela virgula
 }
+function calcularuber(){
+    let distancia, temposec,tempomin, tempohoras,tempodias
+    const velocidade = 300000
+    distanica = Number(prompt("Distancia:"))
+    temposec = distancia / velocidade
+    resposta.innerHTML = "<br>Tempo:" + temposec + "Segundo(s)"
+    if(temposec > 60){
+        tempomin = temposec /60
+        resposta.innerHTML += "<br>ou " + tempomin + "minuto(s)"
+    }
+    if(tempomin >60){
+        tempohoras = tempomin / 60
+        resposta.innerHTML += "<br>ou " + tempohoras + "horas" 
+    }
+    if (tempohoras > 24){
+        tempodias = tempohoras /24
+    }
+}
