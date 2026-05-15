@@ -79,35 +79,23 @@ function game(){
         }
 }
 function uber(){
-    let diaria = Number(prompt("Numero de diarias:"))
-    let precodiaria,desconto_10,desconto_15
-    resposta.innerHTML = "AVISO: Você danificou materiais e pagará uma multa de R$150 "
-    resposta.innerHTML += "<br>Você recebeu um desconto de 10% da recepcionista e depois recebeu outro desconto de 15% por ser uber"
-    if(diaria<=5){
+    let diaria, precodiaria, total_pagar,desconto_25
+    diaria = Number(prompt("Numero de diarias:"))
+    if(diaria <= 5){ 
         precodiaria = 100
-        precodiaria = precodiaria * diaria
-        desconto_10 = precodiaria *0.1
-        precodiaria = precodiaria - desconto_10
-        desconto_15 = precodiaria *0.15
-        precodiaria = precodiaria - desconto_15 + 150
-        resposta.innerHTML += "<br>O total que você irá pagar será de" + precodiaria
-    }else if(diaria>5 && diaria <=10){
-        precodiaria = 90 
-        precodiaria = precodiaria * diaria
-        desconto_10 = precodiaria *0.1
-        precodiaria = precodiaria - desconto_10
-        desconto_15 = precodiaria *0.15
-        precodiaria = precodiaria - desconto_15 + 150
-        resposta.innerHTML += "<br>O total que você irá pagar será de" + precodiaria
-    }else if(diaria>=11){
-        precodiaria = 80
-        precodiaria = precodiaria * diaria
-        desconto_10 = precodiaria *0.1
-        precodiaria = precodiaria - desconto_10
-        desconto_15 = precodiaria *0.15
-        precodiaria = precodiaria - desconto_15 + 150
-        resposta.innerHTML += "<br>O total que você irá pagar será de" + precodiaria
+        total_pagar = precodiaria *diaria
+    }else if(diaria >=6 && diaria <=10){
+        precodiaria = 90
+        total_pagar = precodiaria * diaria
     }else{
-        resposta.innerHTML = "Por favor tente novamente"
+        precodiaria = 80
+        total_pagar = precodiaria * diaria
     }
+    desconto_25 = total_pagar *0.25
+    total_pagar = total_pagar - desconto_25 + 150
+    resposta.innerHTML = "Como você vai ficar " + diaria + "dias você vai pagar um total de R$" + total_pagar
+    resposta.innerHTML += "<br>Você iria pagar R$" + precodiaria + "por dia"
+    resposta.innerHTML += "<br>Mas a moça da recepção gostou de você e te deu 10% de desconto, e mais 15% de desconto por você ser uber"
+    resposta.innerHTML += "<br>Totalizando 25%"
+    resposta.innerHTML += "<br>Você também teve que pagar R$150 por danificar materiais"
 }
