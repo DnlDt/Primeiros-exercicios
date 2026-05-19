@@ -9,6 +9,21 @@ function registrarvenda(){
     document.getElementById("inputVenda").value = ""
     document.getElementById("inputVenda").focus()
 }
+function teste(){
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
 function incrementarcontagem(){
     cont = cont + 1
     document.getElementById("p-contagem").innerHTML = cont
