@@ -8,10 +8,22 @@
 <body>
     <h1>DnlNébb</h1>
     <hr>
+    <h2>Vendas harry potter</h2>
+    <p id="p-totalVendido">Total de vendas: R$0,00</p>
+    Valor da venda R$
+    <input id="inputVenda" type="text">
+    <div id="listaVendas"></div>
+    <button onclick="registrarvenda()">Cadastrar</button>
+    <hr>
+
     <button onclick="incrementarcontagem()">+</button>
+    <button onclick="somar10()">+10</button>
     <p id="p-contagem">
         0
     </p>
+    <button onclick="decrementarcontagem()">-</button>
+    <button onclick="sub10()">-10</button>
+    <button onclick="zero()">0</button>
     <hr>
     <output id="resultado"></output>
     <script src="script.js"></script>

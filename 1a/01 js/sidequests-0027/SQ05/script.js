@@ -93,9 +93,46 @@ function uber(){
     }
     desconto_25 = total_pagar *0.25
     total_pagar = total_pagar - desconto_25 + 150
-    resposta.innerHTML = "Como você vai ficar " + diaria + "dias você vai pagar um total de R$" + total_pagar
-    resposta.innerHTML += "<br>Você iria pagar R$" + precodiaria + "por dia"
+    resposta.innerHTML = "Como você vai ficar " + diaria + " dias você vai pagar um total de R$" + total_pagar
+    resposta.innerHTML += "<br>Você iria pagar R$" + precodiaria.toFixed(2) + " por dia"
     resposta.innerHTML += "<br>Mas a moça da recepção gostou de você e te deu 10% de desconto, e mais 15% de desconto por você ser uber"
     resposta.innerHTML += "<br>Totalizando 25%"
     resposta.innerHTML += "<br>Você também teve que pagar R$150 por danificar materiais"
+}
+function votacao(){
+    let idade = Number(prompt("Idade:"))
+    if(idade<16){
+        resposta.innerHTML = "Você é menor de 16 anos, não pode votar"
+    }else if(idade <=17){
+        resposta.innerHTML = "Voto facultativo"
+    }else if(idade>= 18 && idade <=65){
+        resposta.innerHTML = "Voto obrigatorio"
+    }else{
+        resposta.innerHTML = "Como você é maior de 65 anos você tem um voto facultativo"
+    }
+}
+function pesoideal(){
+    let altura = Number(prompt("Altura(M):"))
+    let genero = Number(prompt("Digite 1 para feminino e 2 para masculino"))
+    let peso
+    if(genero == "1"){
+        peso = (62.1* altura) - 44.7
+        resposta.innerHTML = "Seu peso ideal é de " +peso.toFixed(2) + "KG"
+    }else{
+        peso = (72.7* altura) - 58
+        resposta.innerHTML = "Seu peso ideal é de " +pesoq.toFixed(2) + "KG"
+    }
+}
+function feira(){
+    let maca = Number(prompt("Quantidade de maçãs:"))
+    let precomaca, total
+    if(maca <12){
+        precomaca = 0.30
+        total = precomaca * maca
+        resposta.innerHTML = "Total: R$" + total.toFixed(2)
+    }else{ 
+        precomaca = 0.25
+        total = precomaca * maca
+        resposta.innerHTML = "Total: R$" + total.toFixed(2)
+}
 }
