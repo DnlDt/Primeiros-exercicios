@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>var</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>DnlNébb</h1>
@@ -16,22 +17,10 @@
     <div id="listaVendas"></div>
     <button onclick="registrarvenda()">Cadastrar</button>
     <hr>
+    
+    
+    <!-- <hr>
     <hr>
-    <hr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -47,7 +36,7 @@
 
     <hr>
     <hr>
-    <hr>
+    <hr> -->
     <button onclick="incrementarcontagem()">+</button>
     <button onclick="somar10()">+10</button>
     <p id="p-contagem">
@@ -57,6 +46,29 @@
     <button onclick="sub10()">-10</button>
     <button onclick="zero()">0</button>
     <hr>
+
+
+
+
+    <h2>Dados da donad bete</h2>
+    <div>
+    Total das rolagens: <output id="outputtotal">0</output>
+    <button onclick="resetar()">reset</button>
+    </div>
+    <div>
+        Ultima rolagem: <output id="outputultima"></output>
+    </div>
+    <div>
+        <button onclick="rolardado(2)">D2</button>
+        <button onclick="rolardado(4)">D4</button>
+        <button onclick="rolardado(6)">D6</button>
+        <button onclick="rolardado(10)">D10</button>
+        <button onclick="rolardado(12)">D12</button>
+        <button onclick="rolardado(20)">D20'</button>
+    </div>
+    <div id="historico"></div>
+
+
     <output id="resultado"></output>
     <script src="script.js"></script>
 </body>

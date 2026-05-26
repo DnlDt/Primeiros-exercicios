@@ -5,17 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AnswerMe</title>
     <link rel="stylesheet" href="style.css">
-    <h1>0030 SQ06</h1>
-    <hr>
-    <!-- Quantidade de marujos:
-    <input id="marujos" type="text">
-    <div></div>
-    Quantidade de comida(KG):
-    <input id="comida" type="text">
-    <button onclick="ganso()">Capitão ganso</button> -->
+    
+    <script src="script.js"></script>
     <output id="resultado"></output>
 </head>
 <body>
+    <h1>0030 SQ06</h1>
+    <hr>
+    <h2>Capitão Ganso e o teste de recrutamento para novos marujos</h2>
+    Sabe nadar? (S/N)
+    <input id="nadar" type="text">
+    <div></div>
+    Idade:
+    <input id="idade" type="text">
+    <div></div>
+    Tem carta de recomendação? (S/N)
+    <input id="carta" type="text">
+    <div></div>
+    <button onclick="recruta()">Enviar Recrutamento</button>
+    <p id="resposta-recruta"></p>
+    <hr>
     
+    <h2>Sarumano e a máquina de Fumaça Mística</h2>
+    Crianças pequenas:
+    <input id="criancas" type="text">
+    <br>
+    Velocidade do vento:
+    <input id="velocidade" type="text">
+    <p id="resposta-fumaca"></p>
+    <button onclick="saru_maqui()">Enviar dados</button>
+    <hr>
+    
+    <h2> Sarumano e o deslocamento para eventos</h2>
+    Você está gripado? 
+    <input id="gripado" type="text">
+    <br>Tempo de viagem:
+    <input id="tempo" type="text">
+    <br>
+    <button onclick="saru_deslocamento()">Enviar dados para verificação</button>
+    
+    <hr>
+    <h2>Sarumano e a entrada no palco</h2>
+    <div>
+    O som está funcionando? <input id="som" type="text">
+    </div>
+    <div>
+        O figurino está completo? <input id="figurino" type="text">
+    </div>
+    <output id="resposta-palco"></output>
+    <button onclick="saru_entrada()">Enviar dados</button>
+    
+    <hr>
+    <h2>Denis Nery Junin,I.A.e você🫵: Sistema de Transporte Interno</h2>
+    <div>
+    Há manuntenção ativa? <input type="text" id="manuntencao">
+    </div>
+    <div>
+        O nivel de emergencia está alto? <input type="text" id="emergencia">
+    </div>
+    <output id="resposta_d"></output>
+    <button onclick="Deny()">Enviar</button>
+
+
+
+
+
 </body>
 </html>
