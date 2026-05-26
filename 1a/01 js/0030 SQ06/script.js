@@ -74,9 +74,33 @@ function Deny(){
     let emergencia = (document.getElementById("emergencia").value.toLowerCase().trim())
     if((manuntencao == "n" || manuntencao == "nao") && ( emergencia == "n" || emergencia == "nao")){
         document.getElementById("resposta_d").innerHTML = "Transporte liberado para uso."
-    }else if(manuntencao == "S" || manuntencao == "s" || manuntencao == "sim" || emergencia == "s" || emergencia == "sim"){
+    }else if(manuntencao == "s" || manuntencao == "sim" || emergencia == "s" || emergencia == "sim"){
         document.getElementById("resposta_d").innerHTML = "Transporte indisponível por motivo de segurança"
     }else{
         document.getElementById("resposta_d").innerHTML = "Por favor digite novamente"  
+    }
+}
+function deny_nery(){
+    let cracha = (document.getElementById("cracha").value.toLowerCase().trim()) // trim tira os espaços q a pessoa digita
+    let digital = (document.getElementById("digital").value.toLowerCase().trim())
+    if((cracha == "s" || cracha == "sim") && (digital == "s" || digital == "sim")){
+        document.getElementById("resposta_a").innerHTML = "Acesso liberado ao Centro de Comando"
+    }else if((cracha == "n" || cracha == "nao") && (digital == "s" || digital == "sim")){ 
+        document.getElementById("resposta_a").innerHTML = "Crachá inválido. Dirija-se à recepção"
+    }else if((cracha == "s" || cracha == "sim") && (digital == "n" || digital == "nao")){ 
+        document.getElementById("resposta_a").innerHTML = "Falha na digital. Tente novamente ou chame o suporte"
+    }else if((cracha == "n" || cracha == "nao") && (digital == "nao" || digital == "n")){
+        document.getElementById("resposta_a").innerHTML = "Acesso negado. Verifique sua identificação"
+    }else{
+        document.getElementById("resposta_a").innerHTML = "Por favor, digite novamente"
+    }
+}
+function junin(){
+    let visitantes = parseInt(document.getElementById("visitantes").value.toLowerCase().trim())
+    let hora = Number(document.getElementById("hora").value.toLowerCase().trim())
+    if(visitantes == 0 && hora >=0 && hora<8 && hora>18 && hora <=23){
+        document.getElementById("resposta_u").innerHTML = "Liberação autorizada. Abrindo jaula."
+    }else{
+        document.getElementById("repsosta_u").innerHTML = "Liberação negada. Área em uso ou fora do horário permitido."
     }
 }
