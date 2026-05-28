@@ -96,11 +96,11 @@ function deny_nery(){
     }
 }
 function junin(){
-    let visitantes = parseInt(document.getElementById("visitantes").value.toLowerCase().trim())
-    let hora = Number(document.getElementById("hora").value.toLowerCase().trim())
-    if(visitantes == 0 && hora >=0 && hora<8 && hora>18 && hora <=23){
+    let visitantes = parseInt(document.getElementById("visitantes").value.trim())
+    let hora = Number(document.getElementById("hora").value.trim())
+    if(visitantes == 0 && hora >=0 && hora <24 && (hora < 8 || hora>18)){ 
         document.getElementById("resposta_u").innerHTML = "Liberação autorizada. Abrindo jaula."
     }else{
-        document.getElementById("repsosta_u").innerHTML = "Liberação negada. Área em uso ou fora do horário permitido."
+        document.getElementById("resposta_u").innerHTML = "Liberação negada. Área em uso ou fora do horário permitido."
     }
 }
