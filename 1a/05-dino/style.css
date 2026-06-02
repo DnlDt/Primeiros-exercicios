@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #114411;
+}
+h1{
+    color: #367e8a;
+    margin: 10px;
+}
+label{
+    color: #268655;
+    margin: 10px;
+}
+button{
+    background-color: black;
+    color: #a5a6aa;
+    padding: 5px;
+    width: 25%;
+    border-radius: 5px;
+}
+#btfinanca{
+    width: 40px;
+}
+h2{
+    color: #268665;
+    text-align: center;
+    /* para alinhar o texto no meio */
+}
+p{
+    color: #268665;
+    padding: 10px 30px;
+}
+input{
+    height: 32px;
+    border-radius: 10px;
+}
+#divbt{
+    padding: 20px; 
+    /* padding distancia entre um elemento e outro  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
