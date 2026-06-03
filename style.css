@@ -1,0 +1,26 @@
+.btn1{
+    background-color: #f08080;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+}
+.btn1:hover{
+    font-family: fantasy;
+    font-size: 32px;
+    border-radius: 0px;
+    background-color: blue; 
+    box-shadow: inset #000 2px 5px 40px 12px;
+}
+.btn2{
+    background-color: #ca8aee;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-size: 16px;
+}
+.btn2:hover{
+    transform: scale(100);
+}
