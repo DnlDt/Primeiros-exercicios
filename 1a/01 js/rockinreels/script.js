@@ -1,0 +1,3 @@
+function iniciar(){
+    document.getElementById("01").innerHTML = "Primeiro convite: Tias Fofinhas Roque já tem a Jota Qwert confirmada e vai atrás da possível segunda atração do Rock in Reels.<br>Visitando suas amigas da Tias Fofinhas (uma banda cover de Tear for Fears), fez o convite e ouviu suas exigências: 50 toalhas de crochê no camarim. <br>Roque então se viu em um dilema: nem camarim o evento tem, elas vão tocar pela internet. Quanto mais 50 toalhas de crochê. Roque deve falar a verdade ou mentir que tem camarim e as toalhas? <br>Verdade: 2 <br>Mentir: 3"
+}

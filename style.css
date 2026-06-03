@@ -1,10 +1,13 @@
-.btn1{
+button{
     background-color: #f08080;
     padding: 12px;
     border-radius: 6px;
     border: none;
     color: #fff;
     font-size: 16px;
+}
+.btn1{
+    background-color: goldenrod;
 }
 .btn1:hover{
     font-family: fantasy;
@@ -14,13 +17,14 @@
     box-shadow: inset #000 2px 5px 40px 12px;
 }
 .btn2{
-    background-color: #ca8aee;
-    padding: 12px;
-    border-radius: 6px;
-    border: none;
-    color: white;
-    font-size: 16px;
+    background-color: #ca8aee
 }
 .btn2:hover{
-    transform: scale(100);
+    transform: scale(1.05);
+}
+.btn3{
+    background-color: bisque;
+}
+.btn3:hover{
+    transform: scale(1.2) rotate(10deg);
 }
