@@ -84,7 +84,17 @@ function maluquice(){
             alert( c + "Fizz")
         }else if(c%5 == 0){
             alert(c + "Buzz")
+        }else{
+          alert(c)
+        }
     }
 }
-    alert(c)
+function fracao(){
+    c= 0 
+    let total = 0 
+    while(c<10){
+        c++
+        total = total + (1/c)
+    }
+    alert(total)
 }
