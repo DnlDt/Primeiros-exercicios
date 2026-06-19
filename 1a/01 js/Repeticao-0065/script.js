@@ -89,12 +89,59 @@ function maluquice(){
         }
     }
 }
-function fracao(){
-    c= 0 
-    let total = 0 
+function fracao(){ //10
+    c = 0
+    total = 0
     while(c<10){
         c++
-        total = total + (1/c)
+        total = total + 1 /c
     }
     alert(total)
+}
+
+function impar(){
+    n = Number(prompt("Digite um numero para ver qual a quantidade de numeros impares e numeros pares até esse numero"))
+    c = 0 
+    i = 0
+    p = 0
+    while(c<n){
+        c++
+        if(c%2 == 0){
+            p++
+        }else{
+            i++
+        }
+     }
+     alert("A quantidade de numeros pares até o numero " + n + " é de " + p)
+     alert("A quantidade de numeros impares até o numero " + n + " é de " + i)
+}
+function lista(){
+    // 1. Criamos a nossa lista (o armário com as gavetas)
+    let lista = [15, 8, 90, 3, 42]; 
+    
+    // 2. O ponto de partida: o primeiro número (gaveta 0) é o rei provisório
+    let maior = lista[0]; 
+    let menor = lista[0]; 
+    
+    // 3. O contador para abrir as gavetas
+    let c = 0; 
+    
+    // O while vai rodar até o 'c' chegar na última gaveta (que é a gaveta 4)
+    while(c < 4) { 
+        c++; // Avança para a próxima gaveta (gaveta 1, depois 2, 3, 4...)
+        
+        // Testa se o número da gaveta atual é MAIOR que o nosso rei
+        if (lista[c] > maior) {
+            maior = lista[c]; // Se for, ele rouba o trono de maior
+        }
+        
+        // Testa se o número da gaveta atual é MENOR que o nosso perdedor
+        if (lista[c] < menor) {
+            menor = lista[c]; // Se for, ele rouba o lugar de menor
+        }
+    }
+    
+    // 4. Mostramos quem sobreviveu nas caixas no final de tudo
+    alert("O maior número da lista é: " + maior);
+    alert("O menor número da lista é: " + menor);
 }
