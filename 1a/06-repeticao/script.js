@@ -15,12 +15,21 @@
 // }
 // contador ++
 
-let total = 0
-let i = 0
-while(i < 3){
-    i++
-    let preco = Number(prompt("Digite o preço do " + i + "° produto"))
-    total = total + preco
+// let total = 0
+// let i = 0
+// while(i < 3){
+//     i++
+//     let preco = Number(prompt("Digite o preço do " + i + "° produto"))
+//     total = total + preco
 
-    document.getElementById("total").innerHTML += i + "° produto: R$" + preco.toFixed(2) + "<br>"
+//     document.getElementById("total").innerHTML += i + "° produto: R$" + preco.toFixed(2) + "<br>"
+// }
+
+
+
+
+//for
+
+for(let i = 1; i<=10; i++){ // i = 1      enquanto i for menor ou igual a 10, acrescente 1+ para o i
+    console.log(i)
 }

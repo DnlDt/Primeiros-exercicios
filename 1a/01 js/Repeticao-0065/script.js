@@ -89,7 +89,7 @@ function maluquice(){
         }
     }
 }
-function fracao(){ //10
+function fracao(){ //10 n entendi esquerdo
     c = 0
     total = 0
     while(c<10){
@@ -115,7 +115,7 @@ function impar(){
      alert("A quantidade de numeros pares até o numero " + n + " é de " + p)
      alert("A quantidade de numeros impares até o numero " + n + " é de " + i)
 }
-function lista(){
+function lista(){//estudar
     // 1. Criamos a nossa lista (o armário com as gavetas)
     let lista = [15, 8, 90, 3, 42]; 
     
@@ -144,4 +144,149 @@ function lista(){
     // 4. Mostramos quem sobreviveu nas caixas no final de tudo
     alert("O maior número da lista é: " + maior);
     alert("O menor número da lista é: " + menor);
+}
+
+function medialista(){
+    let lista = [3,102,302,23,63];
+    let media = 0 
+    let c = 0 
+    while(c<5){
+        media = media + lista[c]
+        c++
+    }
+    media = media/5
+    alert("A média é de " + media)
+}
+
+function primo(){ // IA nao entnedi
+    function verificarPrimo() {
+    // 1. Pegamos o número que o usuário quer testar
+    let num = Number(prompt("Digite um número para saber se ele é primo:"));
+    
+    // 2. Criamos o nosso "testador de números" começando em 2
+    let divisor = 2; 
+    
+    // 3. A nossa testemunha. Começa valendo true (acreditamos que é primo)
+    let ePrimo = true; 
+    
+    // 4. O while vai testar todos os números do 2 até chegar perto do número digitado
+    while (divisor < num) {
+        
+        // Se o número dividir por algum divisor do meio do caminho com resto zero...
+        if (num % divisor == 0) {
+            ePrimo = false; // A testemunha descobre que ele NÃO é primo!
+        }
+        
+        divisor++; // Avança para testar o próximo número (3, depois 4, 5...)
+    }
+    
+    // 5. Fora do while, olhamos o que sobrou na nossa variável testemunha
+    if (ePrimo == true) {
+        alert("O número " + num + " é PRIMO! 🎉");
+    } else {
+        alert("O número " + num + " NÃO é primo. ❌");
+    }
+}
+    
+}
+
+
+
+
+//parte 2 for 
+
+function first(){
+    let soma = 0
+    for(let i = 1; i<=10; i++){
+        soma +=i
+    }
+    alert("A soma total é de " + soma)
+}
+function tabuada(){
+    n = Number(prompt("Digite um numero para ver a tabuada "))
+    let resultado = 0 
+    for(let c =0;c<=10; c++){
+        resultado = n*c
+        alert(n + "X" + c + " = " + resultado)
+    }
+}
+function cuadrado(){
+    let quadrado = 0 
+    for(let c = 1; c <= 10 ;c++){
+        quadrado = c*c
+        alert(c + "² = " + quadrado)
+    }
+}
+function js(){
+    let palavra = "Javascript"
+    for(let c = 0; c<=9; c++){
+        alert(palavra[c])
+    }
+}
+function multiply(){
+    for(c = 1; c <=30; c++){
+        if(c % 3 == 0){
+            alert(c + " é divisivel por 3")
+        }
+    }
+}
+
+function aste(){
+    let linha = ""; 
+        for (let c = 1; c <= 10; c++) {
+        linha = linha + "*"; 
+    }
+    alert(linha); 
+}
+
+function pari(){
+    let soma =0 
+    for(c = 0; c<=20; c +=2){
+        soma = soma +c
+    }
+    alert(soma)
+}
+
+function fifty(){
+    for(let c = 0; c<=50; c+=5){
+        alert(c)
+    }
+}
+
+function ola(){
+    let ola = "Olá"
+    for(c = 0; c<8; c++){
+        alert(ola)
+    }
+}
+
+function impa(){
+    let soma = 0
+    for(let c = 1; c<=15; c +=2){
+        soma += c
+    }
+    alert(soma)
+}
+
+
+function sequencia(){// incompelto 12
+    }
+
+function fato(){
+    n = 5
+    for(c = 4; c>=1; c--){
+        n = n *c
+    }
+    alert(n)
+}
+
+function word(){
+    palavra = prompt("Palavra:")
+    o = 0
+    for(c = 0; c < palavra.length; c++){
+        if(palavra[c] == "o" || palavra[c] == "O"){
+            o++
+        }
+    }
+    alert(palavra + " tem " + o + " letras O")
 }
