@@ -1,0 +1,37 @@
+.menu{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    /* justify content bota os elementos no lugar q tu falar, por exemplo no centro */
+    gap: 40px; 
+    /* gap = espaçamento entre os itens */
+    background-color: rgb(255, 238, 220);
+}
+
+.hidden{
+    display: none;
+}
+button{
+   border-radius: 9px; 
+   /* arrendonda a borda do botao */
+
+   padding: 8px;
+   /* aumenta o tamanho dos botoes */
+
+   border: none;
+   /* tira a borda dos botoes */
+
+   color: #fff;
+   /* mude a cor do texto no botao */
+
+   font-size: 15px;
+   /* aumenta o tamanho da fonte dos botoes, consequentemente aumentando o botao */
+   background-color: green;
+
+
+}
+button:hover{
+    transform: scale(1.03);
+    /* quando passar o mouse em cima do botao ele vai aumentar de tamanho, ou seja, o tamanho normal * 1.1 */
+
+}

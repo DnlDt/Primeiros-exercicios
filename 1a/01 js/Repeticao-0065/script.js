@@ -1,3 +1,18 @@
+function mostraraba(aba){
+    document.getElementById("1").classList.add("hidden")
+    document.getElementById("For").classList.add("hidden")
+    document.getElementById("2").classList.add("hidden")
+
+    if(aba == "parteone"){
+        document.getElementById("1").classList.remove("hidden")
+    }else if(aba == "for"){
+        document.getElementById("For").classList.remove("hidden")
+    }else if(aba == "partetwo"){
+        document.getElementById("2").classList.remove("hidden")
+    }
+}
+
+
 function quadrado(){
     let contador = 0
     while(contador <10){
@@ -63,15 +78,22 @@ function crescente(){
         alert(contado)
     }
 }
-function fatorial(){ // incompleto
-    let fatora = Number(prompt("Numero:"))
-    let resultado 
-    while(fatora>0){
-        p = fatora - 1
-        resultado = fatora * p
-
+function fatorial(){ 
+    // let n = Number(prompt("Digite um numero:"))
+    // let c = n
+    // resultado = 0
+    // while(c>1){
+    //     c--
+    //     resultado = n * (c-1)
+    // }
+    // alert(resultado)
+    let n = Number(prompt("Digite um numero:"))
+    let c = n-1
+    while(c>1){
+        c--
+        n = n*c
     }
-    alert(resultado)
+    alert(n)
 }
 
 function maluquice(){
@@ -99,7 +121,7 @@ function fracao(){ //10 n entendi esquerdo
     alert(total)
 }
 
-function impar(){
+function imparr(){
     n = Number(prompt("Digite um numero para ver qual a quantidade de numeros impares e numeros pares até esse numero"))
     c = 0 
     i = 0
@@ -159,7 +181,6 @@ function medialista(){
 }
 
 function primo(){ // IA nao entnedi
-    function verificarPrimo() {
     // 1. Pegamos o número que o usuário quer testar
     let num = Number(prompt("Digite um número para saber se ele é primo:"));
     
@@ -187,13 +208,14 @@ function primo(){ // IA nao entnedi
         alert("O número " + num + " NÃO é primo. ❌");
     }
 }
-    
-}
 
 
 
 
-//parte 2 for 
+
+
+//Exercicios do for
+
 
 function first(){
     let soma = 0
@@ -269,8 +291,13 @@ function impa(){
 }
 
 
-function sequencia(){// incompelto 12
+function sequencia(){
+    let n = "" 
+    for(let c = 1; c<=5; c++){
+        n = n + c
+        alert(n)
     }
+}
 
 function fato(){
     n = 5
@@ -283,10 +310,10 @@ function fato(){
 function word(){
     palavra = prompt("Palavra:")
     o = 0
-    for(c = 0; c < palavra.length; c++){
+    for(c = 0; c < palavra.length; c++){ // o length faz as letras da palavra q o usuario digitar como numero. por exemplo, se o usuario digitar ovo palavra[0] =   palavra[1] = v e assim vai, por isso botamos o laço de repetição para fazer isso automaticamente e verificar se alguma das letras é a letra O
         if(palavra[c] == "o" || palavra[c] == "O"){
             o++
-        }
+        }      
     }
     alert(palavra + " tem " + o + " letras O")
 }

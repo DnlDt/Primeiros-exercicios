@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Exercicios de repetição</h1>
-    <div>
+    <nav class="menu">
+        <a href="#" onclick="mostraraba('parteone')">Parte um- While</a>
+        <a href="#" onclick="mostraraba('for')">Exercicios for</a>
+        <a href="#" onclick="mostraraba('partetwo')">Parte dois</a>
+    </nav>
+    
+    <header>
+        <h1>Exercicios: Laços de repetição</h1>
+    </header>
+
+
+
+    <div id="1">
+        <h2>Exercicios parte um</h2>
+        <hr>
         <button onclick="quadrado()">Quadrado</button>
         <button onclick="regressiva()">Contagem regressiva</button>
         <button onclick="soma()">Soma de 1 a 100</button>
@@ -18,14 +32,18 @@
         <button onclick="fatorial()">Calcular fatorial</button>
         <button onclick="maluquice()">FIzz BUzz</button>
         <button onclick="fracao()">Fracao</button>
-        <button onclick="impar()">Impar/par</button>
+        <button onclick="imparr()">Impar/par</button>
         <button onclick="lista()">Lista</button>
         <button onclick="medialista()">Media da lista</button>
         <button onclick="primo()">Primo ou não primo</button>
     </div>
-    <hr>
-    <h2>for</h2>
-    <div>
+    
+
+
+
+    <div id="For"class = "hidden">
+        <h2>Exercicios for</h2>
+        <hr>
         <button onclick="first()">Somar tudo de 1 a 10</button>
         <button onclick="tabuada()">Tabuada</button>
         <button onclick="cuadrado()">Quadrado de 0 a 10</button>
@@ -39,6 +57,10 @@
         <button onclick="sequencia()">Sequencia estranha </button>
         <button onclick="fato()">Fatorial de 5</button>
         <button onclick="word()">Palavra com O</button>
+    </div>
+
+    <div id="2" class="hidden">
+        <h2>Exercicios parte 2</h2>
     </div>
     <script src="script.js"></script>
 </body>
