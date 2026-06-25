@@ -90,8 +90,8 @@ function fatorial(){
     let n = Number(prompt("Digite um numero:"))
     let c = n-1
     while(c>1){
+        n = n *c
         c--
-        n = n*c
     }
     alert(n)
 }
@@ -111,7 +111,7 @@ function maluquice(){
         }
     }
 }
-function fracao(){ //10 n entendi esquerdo
+function fracao(){ 
     c = 0
     total = 0
     while(c<10){
@@ -180,7 +180,7 @@ function medialista(){
     alert("A média é de " + media)
 }
 
-function primo(){ // IA nao entnedi
+function primo(){
     // 1. Pegamos o número que o usuário quer testar
     let num = Number(prompt("Digite um número para saber se ele é primo:"));
     
