@@ -56,7 +56,7 @@ function tabuada_usuario(){
         alert(tabu +"X" + contador + " = " + resultado)
     }
 }
-function impar(){ // 6
+function impar(){ 
     let contador = 0 
     let impar
     while(contador<20){
@@ -79,14 +79,6 @@ function crescente(){
     }
 }
 function fatorial(){ 
-    // let n = Number(prompt("Digite um numero:"))
-    // let c = n
-    // resultado = 0
-    // while(c>1){
-    //     c--
-    //     resultado = n * (c-1)
-    // }
-    // alert(resultado)
     let n = Number(prompt("Digite um numero:"))
     let c = n-1
     while(c>1){
