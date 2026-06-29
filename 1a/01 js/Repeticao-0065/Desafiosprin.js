@@ -6,7 +6,7 @@ function começar(start){
 function enviar(){
     let dias = document.getElementById("dias").value;
     let tarefas = 0
-    tarefastotais = 0 
+    let tarefastotais = 0 
     let relatorio = ""
     dias = parseInt(dias)
     for(let c = 1; c<=dias;c++){
@@ -15,4 +15,5 @@ function enviar(){
         relatorio = relatorio + "Dia " + c + ": " + tarefas + " Tarefa(s) concluida(s)<br>"
     }
     document.getElementById("resultado").innerHTML = relatorio 
+    document.getElementById("resultadototal").innerHTML = "Total de tarefas concluidas: " + tarefastotais
 }
