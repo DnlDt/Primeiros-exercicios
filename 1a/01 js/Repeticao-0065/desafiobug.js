@@ -14,16 +14,19 @@ function enviar(){
         if(c == 1){
             maior = bugs
             menor = bugs
-        }else{
-            
+        }else if(bugs >maior){
+            maior = bugs
+        }else if(bugs <menor){
+            menor = bugs
+        }
         }
 
         totalbugs = totalbugs + bugs
         relatorio_bugs = relatorio_bugs + "Dia " + c + ": " + bugs + " bugs<br>"
+        media = totalbugs / dias
+        document.getElementById("resposta").innerHTML = relatorio_bugs
+        document.getElementById("resposta").innerHTML += "<br>------------------------"
+        document.getElementById("resposta").innerHTML += "<br><br>Total de bugs: " + totalbugs
+        document.getElementById("resposta").innerHTML += "<br>Média de bugs: " + media
+        document.getElementById("resposta").innerHTML += "<br>"
     }
-    media = totalbugs / dias
-    document.getElementById("resposta").innerHTML = relatorio_bugs
-    document.getElementById("resposta").innerHTML += "<br>------------------------"
-    document.getElementById("resposta").innerHTML += "<br><br>Total de bugs: " + totalbugs
-    document.getElementById("resposta").innerHTML += "<br>Média de bugs: " + media
-}
