@@ -8,19 +8,19 @@ function enviar(){
     let relatorio_bugs = ""
     let totalbugs = 0
     let media = 0
-    let maior, menor
+    let maiorqtd_bugs,menorqtd_bugs,dia_mais,dia_menos
     for(let c = 1;c<=dias;c++){
         bugs = Number(prompt("Quantos bugs tiveram no dia " + c + ":"))
-        if(c == 1){
-            maior = bugs
-            menor = bugs
-        }else if(bugs >maior){
-            maior = bugs
-        }else if(bugs <menor){
-            menor = bugs
+        if(c== 1){
+            maiorqtd_bugs = bugs
+            menorqtd_bugs = bugs
+        }else if(bugs>maiorqtd_bugs){
+            maiorqtd_bugs = bugs
+            dia_mais = c
+        }else if(bugs<menorqtd_bugs){
+            menorqtd_bugs = bugs
+            dia_menos = c
         }
-        }
-
         totalbugs = totalbugs + bugs
         relatorio_bugs = relatorio_bugs + "Dia " + c + ": " + bugs + " bugs<br>"
         media = totalbugs / dias
@@ -28,5 +28,9 @@ function enviar(){
         document.getElementById("resposta").innerHTML += "<br>------------------------"
         document.getElementById("resposta").innerHTML += "<br><br>Total de bugs: " + totalbugs
         document.getElementById("resposta").innerHTML += "<br>Média de bugs: " + media
-        document.getElementById("resposta").innerHTML += "<br>"
+        document.getElementById("resposta").innerHTML += "<br><br>Maior quantidade de bugs: " + maiorqtd_bugs
+        document.getElementById("resposta").innerHTML += "<br>Dia com mais bugs: " + dia_mais
+        document.getElementById("resposta").innerHTML += "<br><br>Menor quantidade de bugs: " + menorqtd_bugs
+        document.getElementById("resposta").innerHTML += "<br>Dia com menos bugs: " + dia_menos
     }
+}

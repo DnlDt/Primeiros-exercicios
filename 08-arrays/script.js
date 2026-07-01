@@ -1,3 +1,14 @@
+const diasdasemana =  ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo']
+const copiasemana = []
+function inverterarray(){
+    while(diasdasemana.length > 0){
+        let removido = diasdasemana.pop()
+        copiasemana.push(removido)
+    }
+    console.log(diasdasemana);
+    console.log(copiasemana);
+    
+}
 let idades = [22,33,32]
 
 let produtos = ["Meia", "Pá de corte", "Suco de manga", "Leite"]
