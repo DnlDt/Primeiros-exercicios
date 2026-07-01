@@ -1,6 +1,82 @@
 .hidden{
     display: none;
 }
-.enviar{
-    padding: 10000px;
+/* 1. Configuração Geral da Página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    /* font-family define a fonte do texto do site, . Ele tenta usar 'Segoe UI' (uma fonte moderna do Windows). Se o computador não tiver, ele usa as outras opções até cair em uma fonte padrão sem serifa (sans-serif). */
+    /* segoe ui é apenas o nome de uma familia de fontes de textos */
+    /* ai ele vai testando as opções de acordo com o celular da pessoa, se nao tiver a segoe por exemplo, ele vai para a tahoma, se nao tiver a tahoma vai para a geneva, e no final chegar na sans-serif q é qualquer fonte padrao do aparelho da pessoa que seja limpa   */
+    
+    background-color: #f4f7f6;
+
+    /* background color muda o fundo da tela inteira para a cor q botar */
+    color: #333333;
+    /* color Define a cor padrão para todos os textos do site */
+
+    display: flex;
+    /*  */
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+/* 2. Estilo do Título Principal */
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* 3. Estilo Geral dos Botões */
+button {
+    background-color: #e67e22; /* Cor Laranja */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 4. Efeito de Passar o Mouse no Botão */
+button:hover {
+    background-color: #d35400; /* Laranja mais escuro */
+}
+
+/* 5. Alinhamento da Área de Enviar (Input + Botão Enviar) */
+#enviar {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+/* 6. Estilo do Campo de Digitar Números */
+input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px;
+}
+
+/* 7. Estilo da Caixa do Relatório (Tag Output) */
+#resposta {
+    display: block; /* Faz o output se comportar como um bloco/caixa */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: left; /* Garante que o texto do relatório fique alinhado à esquerda */
+    min-width: 300px; /* Garante um tamanho mínimo bonito para a caixinha */
+}
+
+/* 8. Classe para Esconder os Elementos */
+.hidden {
+    display: none;
 }
