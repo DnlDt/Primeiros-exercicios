@@ -1,0 +1,83 @@
+/* Configurações globais de fontes e cores do fundo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family define a fonte do texto do site, . Ele tenta usar 'Segoe UI' (uma fonte moderna do Windows). Se o computador não tiver, ele usa as outras opções até cair em uma fonte padrão sem serifa (sans-serif). */
+    /* segoe ui é apenas o nome de uma familia de fontes de textos */
+    /* ai ele vai testando as opções de acordo com o celular da pessoa, se nao tiver a segoe por exemplo, ele vai para a tahoma, se nao tiver a tahoma vai para a geneva, e no final chegar na sans-serif q é qualquer fonte padrao do aparelho da pessoa que seja limpa   */
+    
+    background-color: #f4f7f6;
+    /* background color muda o fundo da tela inteira para a cor q botar */
+
+    color: #333;
+    /* color Define a cor padrão para todos os textos do site */
+
+    max-width: 800px;
+    /* max-width é da esquerda pra direita e ta dizendo que da esquerda pra direita tem no maximo 800px */
+    /* (Por padrão, ele deixa esses 800px travados lá no canto esquerdo da tela) */
+    
+    margin: 40px auto;
+    /* margin dita quantos pixels de distância um elemento deve manter dos outros (ou das bordas da tela). Ela cria aquele "espaço de respeito" ao redor do elemento.     */
+    
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+/* Container que segura todos os botões */
+div:first-of-type {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilização estilosa para os botões */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
+}
+
+/* Efeito quando passa o mouse por cima do botão */
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(41, 128, 185, 0.3);
+}
+
+/* Efeito quando o botão é clicado */
+button:active {
+    transform: translateY(0);
+}
+
+/* Área que exibe o resultado do JavaScript */
+#resultado {
+    display: block;
+    min-height: 50px;
+    background-color: #2e3d49;
+    color: #2ecc71; /* Cor verde para dar destaque ao resultado */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+    word-wrap: break-word;
+}
