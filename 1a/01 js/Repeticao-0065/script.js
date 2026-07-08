@@ -309,3 +309,29 @@ function word(){
     }
     alert(palavra + " tem " + o + " letras O")
 }
+
+// parte 2 
+
+function digite(){
+    palavra = prompt("Digite uma palavra:")
+    for(let c = 1;c<=10;c++)
+        alert(palavra)
+}
+function nt(){
+    numero = Number(prompt("Digite um numero:"))
+    let total = 0
+    for(let soma=2;soma<=numero;soma = soma +2){
+        total = total + soma
+    }
+    alert(total)
+}
+
+function compras(){
+    lista = []
+    let compra 
+    while(compra != 0){
+        compra = document.getElementById("compra").value;
+        lista.push(compra)
+        document.getElementById("resultado").innerHTML = lista
+}
+    }
