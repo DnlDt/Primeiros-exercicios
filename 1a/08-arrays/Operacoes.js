@@ -1,4 +1,4 @@
-const nomes = ["Heitor Tuga", "Padre Ernan Buco", "Kowalski", "Gill Bates"]
+const nomes = ["Heitor Tuga", "Padre Ernan Buco", "Genezio","Kowalski", "Gill Bates"]
 for(let c= 0;c<nomes.length;c++){
     document.getElementById("nomes").innerHTML += nomes[c] + "<br>"
 }
@@ -7,9 +7,9 @@ for(let c= 0;c<nomes.length;c++){
 function verificar(){
     const contem = nomes.includes("Kowalski")
     if(contem == true){
-        document.getElementById("resultado").innerHTML = "Resultado da execução: includes (Kowalski) ->" + contem
+        document.getElementById("resultado").innerHTML = "Resultado da execução: includes (Kowalski) -> " + contem
     }else{
-        document.getElementById("resultado").innerHTML = "Resultado da execução: includes (Kowalski) ->" + contem   
+        document.getElementById("resultado").innerHTML = "Resultado da execução: includes (Kowalski) -> " + contem   
     }
 }
 function Indice(){
@@ -18,6 +18,21 @@ function Indice(){
 }
 
 function inverter(){
+    document.getElementById("nomes").innerHTML = ""
     nomes.reverse()
-    document.getElementById("resultado").innerHTML = "Resultado da execução: " +nomes + "<br>"
+    for(let c =0;c<nomes.length;c++)
+    document.getElementById("nomes").innerHTML += nomes[c] + "<br>"
+}
+function excluir(){
+    for(let c= 0;c<nomes.length;c++)
+        if(nomes[c] == "Genezio"){
+            nomes.splice(c,1)
+            document.getElementById("nomes").innerHTML = nomes
+        }
+}
+function reset(){
+    document.getElementById("nomes").innerHTML = ""
+    for(let c= 0;c<nomes.length;c++){
+    document.getElementById("nomes").innerHTML += nomes[c] + "<br>"
+}
 }
