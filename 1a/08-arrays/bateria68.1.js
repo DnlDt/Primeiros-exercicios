@@ -357,5 +357,5 @@ function random(){
   "Van Grogue",
   "Rosa Negra"
 ];
-pessoas.splice(Math.random)
+
 }
