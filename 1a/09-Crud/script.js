@@ -4,21 +4,13 @@
 // U   >>  Update  >> alterar/atualizar/editar/fuçar/mudar
 // D   >>  Delete  >> Apagar/deletar/excluir
 
-// ctrl + ;
 
-// const nomes = []
-// const alturas = []
-
-
-
-
-// console.log(dino);
 
 let dinos = []
 
 function salvarDados(){
-    localStorage.setItem('dinos', JSON.stringify(dinos))
-    
+    localStorage.setItem('dinos', JSON.stringify(dinos)) || []
+
     // let texto = JSON.stringify(dinos)
     // localStorage.setItem('dinos', texto)
 }
@@ -35,7 +27,7 @@ function cadastrarDino() {
     carregarDados()
 
     const novoDino = {
-        id: Date.now(),
+        id: Date.now(), // cria um id aleatorio contando os segundos de uma data de 1900 e pouco
         nome: document.getElementById('input-nome').value,
         altura: Number(document.getElementById("input-altura").value),
         cor: document.getElementById("input-cor").value,
@@ -47,8 +39,8 @@ function cadastrarDino() {
 
     limparFormulario()
     mostrarTodos()
-
     salvarDados()
+
 }
 
 function limparFormulario() {
@@ -151,6 +143,8 @@ function pesquisar(){
 
 }
 
+
+
 function salvarDino(){
     let id = Number(document.getElementById('input-id').value)
 
@@ -166,7 +160,9 @@ function salvarDino(){
     }
     mostrarTodos()
     limparFormulario()
+    salvarDados()
 }
+
 
 function excluirDino(){
     let id = Number(document.getElementById('input-id').value)
@@ -180,4 +176,5 @@ function excluirDino(){
     }
     mostrarTodos()
     limparFormulario()
+    salvarDados()
 }

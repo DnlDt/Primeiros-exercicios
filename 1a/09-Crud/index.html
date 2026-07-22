@@ -32,17 +32,19 @@
         </div>
 
         <button onclick="cadastrarDino()">+</button>
-        <button onclick="salvarDino()">💾</button>
-        <button onclick="excluirDino()">🗑️</button>
-
+        <button onclick="salvarDino()">Edita pelo id </button>
+        <button onclick="excluirDino()">Apaga pelo id</button>
+        <!-- apaga por completo  --> 
     </div>
 
   
     <div id="painel-botoes">
-        <button onclick="mostrarTodos()">Mostrar todos dinos</button>
+        <button onclick="mostrarTodos()">Mostra na tela tudo q ta dentro do array</button>
+        <!-- mostra na tela tudo q ta dentro do array, se nao tiver nada dentro do array nao vai aparecer nada, tendo sempre q usar a funcao carregarDados -->
         <button onclick="testar()">Teste</button>
         <button onclick="pesquisar()">🔍</button>
-
+        <button onclick="carregarDados()">Carrega do storage para o array</button>
+        <!-- Carrega do storage para o array mas nao mostra na tela -->
     </div>
  
 
@@ -54,4 +56,4 @@
     
     <script src="script.js"></script>
 </body>
-</html>
+</html> 
