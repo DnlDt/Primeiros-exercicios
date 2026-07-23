@@ -18,15 +18,14 @@ function salvarDados(){ // nao tem botao para essa funcao, entao nós ativamos e
     // O JSON.stringify transforma tudo q ta na variavel dinos em linguagem json pq o localstorage só aceita texto puro, ela nao sabe oq é uma array ou um objeto
 
 
-    // let texto = JSON.stringify(dinos)
-    // localStorage.setItem('dinos', texto)
 }
 
 function carregarDados(){
     dinos = JSON.parse(localStorage.getItem('dinos'))|| []
-    
-    // let textoLido = localStorage.getItem('dinos')
-    // dinos = JSON.parse(textoLido)
+    // Json.parse ele pega oq foi transformado em linguagem json e transforma de volta em js 
+    //o getitem seria basicamente para buscar o item 'dinos' que foi guardado la em cima e trazer para a variavel dinos, mas antes disso o json.parse transforma esse item em linguagem js dnv
+    // O || [] garante que, se não houver nada salvo, a variável inicie como uma lista vazia para não dar erro.
+
 }
 
 function cadastrarDino() {
