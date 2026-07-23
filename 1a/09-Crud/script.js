@@ -1,4 +1,3 @@
-
 // C >> Create  >> Cadastrar
 // R   >> Read   >> Ler
 // U   >>  Update  >> alterar/atualizar/editar/fuçar/mudar
@@ -8,15 +7,23 @@
 
 let dinos = []
 
-function salvarDados(){
-    localStorage.setItem('dinos', JSON.stringify(dinos)) || []
+function salvarDados(){ // nao tem botao para essa funcao, entao nós ativamos ela chamando ela em toda função
+
+    localStorage.setItem('dinos', JSON.stringify(dinos)) 
+    // O localStorage é a "memória de longo prazo" do navegador. Se você fechar a aba ou desligar o PC, os dados continuam lá.
+    // imagine que o localStorage é um grande armário de gavetas.
+    // O setItem é a ação de guardar algo em uma gaveta específica, que fica salvo no navegador, mesmo que recarregue a pagina
+    // Ele sempre pede duas coisas (separadas por vírgula): setItem('nome_da_gaveta', valor_que_vai_dentro).
+    // No caso, 'dinos' é a etiqueta que você colou na gaveta (a chave/key).
+    // O JSON.stringify transforma tudo q ta na variavel dinos em linguagem json pq o localstorage só aceita texto puro, ela nao sabe oq é uma array ou um objeto
+
 
     // let texto = JSON.stringify(dinos)
     // localStorage.setItem('dinos', texto)
 }
 
 function carregarDados(){
-    dinos = JSON.parse(localStorage.getItem('dinos'))
+    dinos = JSON.parse(localStorage.getItem('dinos'))|| []
     
     // let textoLido = localStorage.getItem('dinos')
     // dinos = JSON.parse(textoLido)
