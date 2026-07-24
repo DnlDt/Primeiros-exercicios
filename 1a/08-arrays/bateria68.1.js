@@ -291,7 +291,7 @@ function addremove(){
     pessoas.unshift("Frei Dimão")
     pessoas.pop()
     document.getElementById("r").innerHTML = pessoas
-}
+}removaverify()
 function removaverify(){
     const empresas = [
   "Telles Transportes",
@@ -309,7 +309,9 @@ function removaverify(){
 ];
 empresas.splice(5,1)
 const inclui = empresas.includes("Amazonia")
-document.getElementById("r").innerHTML = inclui
+//document.getElementById("r").innerHTML = inclui
+console.log(empresas);
+console.log("A empresa Amazônia está inclusa?", inclui);  
 }
 function invertadescubra(){
     const pessoas = [

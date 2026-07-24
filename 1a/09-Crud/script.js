@@ -24,16 +24,17 @@ function carregarDados(){
     dinos = JSON.parse(localStorage.getItem('dinos'))|| []
     // Json.parse ele pega oq foi transformado em linguagem json e transforma de volta em js 
     //o getitem seria basicamente para buscar o item 'dinos' que foi guardado la em cima e trazer para a variavel dinos, mas antes disso o json.parse transforma esse item em linguagem js dnv
-    // O || [] garante que, se não houver nada salvo, a variável inicie como uma lista vazia para não dar erro.
+    // O || [] serve somente se o 'dinos' for nulo(se nao tiver nada dentro), se ele for nulo, a variavel dino vai receber [] (uma lista vazia) para nao bugar e continuar a rodar o programa
 
 }
 
 function cadastrarDino() {
 
-    carregarDados()
+    carregarDados() // carrega os dados q estão salvos no localstorage, se nao tiver nada no localstorage, nao vai carregar nada 
 
-    const novoDino = {
-        id: Date.now(), // cria um id aleatorio contando os segundos de uma data de 1900 e pouco
+    const novoDino = { // esse {} é um objeto, ele serve para organizar uma informação dizendo exatamente oq ela é 
+
+        id: Date.now(), // cria um id aleatorio contando os milissegundos de uma data de 1900 e pouco
         nome: document.getElementById('input-nome').value,
         altura: Number(document.getElementById("input-altura").value),
         cor: document.getElementById("input-cor").value,
