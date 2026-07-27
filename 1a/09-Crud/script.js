@@ -66,17 +66,17 @@ function limparFormulario() {//limpa tudo oq o usuario tinha digitado
 function mostrarTodos(){
     document.getElementById('painel-dinos').innerHTML = '' //apaga tudo q tava anteriormente
 
-    for(let i=0; i<dinos.length; i++){ // dinos.length seria o numero total de elementos dentro da array 
+    for(let i=0; i<dinos.length; i++){ // dinos.length seria a QUANTIDADE de elementos do array, nao o numero de posições. por exemplo se uma array tem 3 elementos q seria o dinos.length, a posição dele só iria até 2, pq as posições começam a contar em 0 já a quantidade começa a contar em 1, por isso usamos o < em vez do <=
         document.getElementById('painel-dinos').innerHTML += // essas crases fazem com q se possa criar com html aq. usamos o += pq se usassemos o = ele substituiria o elemento anterior pelo novo 
         `<div class="card-dino"> 
-            <h2>${dinos[i].nome}</h2>
+            <h2>${dinos[i].nome}</h2> 
             <p>Altura: ${dinos[i].altura}</p>
             <p>Cor: ${dinos[i].cor}</p>
             <p>Custo: ${dinos[i].custo}</p>
             <p>${dinos[i].id}</p>
-        
         </div>
-        ` 
+        ` // Botando dinos[i](dinos[0] por exemplo) pega a caixa inteira (o objeto com todas as propriedades daquele elemento). Quando você bota o .você abre a caixa e bota a informação q vc quer pegar, por exemplo o nome
+        // Se você não colocasse o ${}, a tela do usuário iria mostrar literalmente a palavra escrita 'dinos[i].nome' ao invés de mostrar o valor da variavel 
     }
 }
 
@@ -135,17 +135,15 @@ function testar() {
 
 }
 
-function pesquisar(){
-    let nomeProcurado = document.getElementById('input-nome').value
+function pesquisar(){// vai buscar o nome q o usuario digitar
+    let nomeProcurado = document.getElementById('input-nome').value // vai pegar o nome q o usuario digitar
 
-    for(let i = 0; i<dinos.length; i++){
-        if(nomeProcurado == dinos[i].nome ){
-            console.log(dinos[i]);
-            document.getElementById('input-altura').value = dinos[i].altura
-            document.getElementById('input-cor').value = dinos[i].cor
+    for(let i = 0; i<dinos.length; i++){//vai fazer do 0 até o fim da array
+        if(nomeProcurado == dinos[i].nome ){// vai verificar se o nome q o usuario digitou ta em alguma parte da array
+            document.getElementById('input-altura').value = dinos[i].altura // nós conseguimos alterar o valor de um elemento fazendo ao contrario, primeiro pegando o id dele, depois botando o .value e dai botamos o valor novo dele
+            document.getElementById('input-cor').value = dinos[i].cor //nesse caso vai aparecer na caixinha do formulario os novos valores, claro se o nome for verdadeiro
             document.getElementById('input-custo').value = dinos[i].custo
             document.getElementById('input-id').value = dinos[i].id
-            console.log(i);
         }
         
     }
@@ -159,12 +157,10 @@ function salvarDino(){
 
     for(let i = 0; i<dinos.length; i++){
         if(id == dinos[i].id ){
-            console.log(dinos[i]);
             dinos[i].altura = document.getElementById('input-altura').value 
             dinos[i].cor = document.getElementById('input-cor').value 
             dinos[i].custo = document.getElementById('input-custo').value 
             dinos[i].id = document.getElementById('input-id').value 
-            console.log(i);
         }
     }
     mostrarTodos()
