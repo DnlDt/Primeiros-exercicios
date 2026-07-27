@@ -11,7 +11,8 @@ function salvarDados(){ // nao tem botao para essa funcao, entao nós ativamos e
 
     localStorage.setItem('dinos', JSON.stringify(dinos)) 
     // O localStorage é a "memória de longo prazo" do navegador. Se você fechar a aba ou desligar o PC, os dados continuam lá.
-    // imagine que o localStorage é um grande armário de gavetas.
+    // imagine que o localSto]
+    // ]rage é um grande armário de gavetas.
     // O setItem é a ação de guardar algo em uma gaveta específica, que fica salvo no navegador, mesmo que recarregue a pagina
     // Ele sempre pede duas coisas (separadas por vírgula): setItem('nome_da_gaveta', valor_que_vai_dentro).
     // No caso, 'dinos' é a etiqueta que você colou na gaveta (a chave/key).
@@ -35,38 +36,39 @@ function cadastrarDino() {
     const novoDino = { // esse {} é um objeto, ele serve para organizar uma informação dizendo exatamente oq ela é 
 
         id: Date.now(), // cria um id aleatorio contando os milissegundos de uma data de 1900 e pouco
-        nome: document.getElementById('input-nome').value,
+        nome: document.getElementById('input-nome').value, // Oq está antes do : se chama propriedade, elas ficam dentro do novodino(objeto), elas servem para organizar e agrupar as informações fazendo elas nao ficarem soltas
         altura: Number(document.getElementById("input-altura").value),
         cor: document.getElementById("input-cor").value,
         custo: Number(document.getElementById("input-custo").value),
     }
-    dinos.push(novoDino)
+    // pense nas propriedades como pequenas variaveis dentro de uma variavel maior
+    //O : seria como o = quando for declara uma variavel, entao por exemplo, o nome seria igual nome = document.getElementById('input-nome').value
+
+    dinos.push(novoDino)//o push vai jogar essas informações do jeito q estão, todas juntas no array dinos, mas vai mostrar ela separadamente, a cada vez q da o push cria um novo elemento
 
     console.log(dinos);
-
     limparFormulario()
     mostrarTodos()
     salvarDados()
 
 }
 
-function limparFormulario() {
-    document.getElementById('input-nome').value = ''
+function limparFormulario() {//limpa tudo oq o usuario tinha digitado
+    document.getElementById('input-nome').value = ''//todos esses vão retirar oq a pessoa tinha escrito no formulario, seja o nome,altura etc... alterando o valor diretamente
     document.getElementById('input-altura').value = ''
     document.getElementById('input-cor').value = ''
     document.getElementById('input-custo').value = ''
     document.getElementById('input-id').value = ''
 
-    document.getElementById('input-nome').focus()
+    document.getElementById('input-nome').focus()// faz a area de digitação voltar para a primeira q no caso seria o nome
 }
 
 function mostrarTodos(){
-    document.getElementById('painel-dinos').innerHTML = '' 
+    document.getElementById('painel-dinos').innerHTML = '' //apaga tudo q tava anteriormente
 
-    for(let i=0; i<dinos.length; i++){
-        // alert(dinos[i].nome)
-        document.getElementById('painel-dinos').innerHTML += 
-        `<div class="card-dino">
+    for(let i=0; i<dinos.length; i++){ // dinos.length seria o numero total de elementos dentro da array 
+        document.getElementById('painel-dinos').innerHTML += // essas crases fazem com q se possa criar com html aq. usamos o += pq se usassemos o = ele substituiria o elemento anterior pelo novo 
+        `<div class="card-dino"> 
             <h2>${dinos[i].nome}</h2>
             <p>Altura: ${dinos[i].altura}</p>
             <p>Cor: ${dinos[i].cor}</p>
