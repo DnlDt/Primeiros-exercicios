@@ -37,12 +37,12 @@ function cadastrarDino() {
 
         id: Date.now(), // cria um id aleatorio contando os milissegundos de uma data de 1900 e pouco
         nome: document.getElementById('input-nome').value, // Oq está antes do : se chama propriedade, elas ficam dentro do novodino(objeto), elas servem para organizar e agrupar as informações fazendo elas nao ficarem soltas
-        altura: Number(document.getElementById("input-altura").value),
+        altura: Number(document.getElementById("input-altura").value),// esse : é a mesma coisa que o =
         cor: document.getElementById("input-cor").value,
         custo: Number(document.getElementById("input-custo").value),
     }
     // pense nas propriedades como pequenas variaveis dentro de uma variavel maior
-    //O : seria como o = quando for declara uma variavel, entao por exemplo, o nome seria igual nome = document.getElementById('input-nome').value
+    // O : seria como o = quando for declara uma variavel, entao por exemplo, o nome seria igual nome = document.getElementById('input-nome').value, mas aqui no caso é feito com o :
 
     dinos.push(novoDino)//o push vai jogar essas informações do jeito q estão, todas juntas no array dinos, mas vai mostrar ela separadamente, a cada vez q da o push cria um novo elemento
 
@@ -81,63 +81,10 @@ function mostrarTodos(){
 }
 
 
-function testar() {
-    
-    // window.location.href = 'teste.html'
-
-    carregarDados()
-
-    localStorage.setItem('teste', 45)
-
-    let testeDeLeitura = localStorage.getItem('teste')
-    console.log(testeDeLeitura);
-    
-
-    dinos = [
-        {
-            id: 1718324500001,
-            nome: "Rex",
-            altura: 6.1,
-            cor: "#8B4513", // Marrom
-            custo: 150000
-        },
-        {
-            id: 1718324500002,
-            nome: "Velo",
-            altura: 2.0,
-            cor: "#2E8B57", // Verde escuro
-            custo: 85000
-        },
-        {
-            id: 1718324500003,
-            nome: "Trike",
-            altura: 3.0,
-            cor: "#708090", // Cinza
-            custo: 120000
-        },
-        {
-            id: 1718324500004,
-            nome: "Braqui",
-            altura: 13.0,
-            cor: "#556B2F", // Verde oliva
-            custo: 250000
-        },
-        {
-            id: 1718324500005,
-            nome: "Ptero",
-            altura: 1.5,
-            cor: "#4682B4", // Azul aço
-            custo: 95000
-        }
-    ]
-
-    console.log(dinos);
-
-}
 
 function pesquisar(){// vai buscar o nome q o usuario digitar
-    let nomeProcurado = document.getElementById('input-nome').value // vai pegar o nome q o usuario digitar
-
+    let nomeProcurado = document.getElementById('input-nome').value // vai pegar o nome q o usuario digitar(quando clicar no botão)
+    
     for(let i = 0; i<dinos.length; i++){//vai fazer do 0 até o fim da array
         if(nomeProcurado == dinos[i].nome ){// vai verificar se o nome q o usuario digitou ta em alguma parte da array
             document.getElementById('input-altura').value = dinos[i].altura // nós conseguimos alterar o valor de um elemento fazendo ao contrario, primeiro pegando o id dele, depois botando o .value e dai botamos o valor novo dele
@@ -147,14 +94,14 @@ function pesquisar(){// vai buscar o nome q o usuario digitar
         }
         
     }
-
+    
 }
 
 
 
 function salvarDino(){
     let id = Number(document.getElementById('input-id').value)
-
+    
     for(let i = 0; i<dinos.length; i++){
         if(id == dinos[i].id ){
             dinos[i].altura = document.getElementById('input-altura').value 
@@ -171,7 +118,7 @@ function salvarDino(){
 
 function excluirDino(){
     let id = Number(document.getElementById('input-id').value)
-
+    
     for(let i = 0; i<dinos.length; i++){
         if(id == dinos[i].id ){
             console.log(dinos[i]);
