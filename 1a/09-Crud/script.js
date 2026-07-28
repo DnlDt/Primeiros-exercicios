@@ -46,7 +46,6 @@ function cadastrarDino() {
 
     dinos.push(novoDino)//o push vai jogar essas informações do jeito q estão, todas juntas no array dinos, mas vai mostrar ela separadamente, a cada vez q da o push cria um novo elemento
 
-    console.log(dinos);
     limparFormulario()
     mostrarTodos()
     salvarDados()
@@ -76,7 +75,7 @@ function mostrarTodos(){
             <p>${dinos[i].id}</p>
         </div>
         ` // Botando dinos[i](dinos[0] por exemplo) pega a caixa inteira (o objeto com todas as propriedades daquele elemento). Quando você bota o .você abre a caixa e bota a informação q vc quer pegar, por exemplo o nome
-        // Se você não colocasse o ${}, a tela do usuário iria mostrar literalmente a palavra escrita 'dinos[i].nome' ao invés de mostrar o valor da variavel 
+        // Se você não colocasse o ${}, a tela do usuário iria mostrar literalmente a palavra escrita 'dinos[i].nome' ao invés de mostrar o valor da variavel
     }
 }
 
@@ -86,7 +85,7 @@ function pesquisar(){// vai buscar o nome q o usuario digitar
     let nomeProcurado = document.getElementById('input-nome').value // vai pegar o nome q o usuario digitar(quando clicar no botão)
     
     for(let i = 0; i<dinos.length; i++){//vai fazer do 0 até o fim da array
-        if(nomeProcurado == dinos[i].nome ){// vai verificar se o nome q o usuario digitou ta em alguma parte da array
+        if(nomeProcurado == dinos[i].nome ){// vai verificar se o nome q o usuario digitou ta no dino que ta sendo checado atualmente 
             document.getElementById('input-altura').value = dinos[i].altura // nós conseguimos alterar o valor de um elemento fazendo ao contrario, primeiro pegando o id dele, depois botando o .value e dai botamos o valor novo dele
             document.getElementById('input-cor').value = dinos[i].cor //nesse caso vai aparecer na caixinha do formulario os novos valores, claro se o nome for verdadeiro
             document.getElementById('input-custo').value = dinos[i].custo
@@ -103,9 +102,9 @@ function salvarDino(){
     let id = Number(document.getElementById('input-id').value)
     
     for(let i = 0; i<dinos.length; i++){
-        if(id == dinos[i].id ){
-            dinos[i].altura = document.getElementById('input-altura').value 
-            dinos[i].cor = document.getElementById('input-cor').value 
+        if(id == dinos[i].id ){// se o id que o usuario digitou for igual ao id q ta sendo checado atualmente 
+            dinos[i].altura = document.getElementById('input-altura').value //Aq vai substituir o valor antigo que tava, pelo valor novo que o usuario digitou
+            dinos[i].cor = document.getElementById('input-cor').value // vai ir la no array, pegar o item cor, e substituir essa cor pela cor que o usuario digitar
             dinos[i].custo = document.getElementById('input-custo').value 
             dinos[i].id = document.getElementById('input-id').value 
         }
@@ -121,9 +120,7 @@ function excluirDino(){
     
     for(let i = 0; i<dinos.length; i++){
         if(id == dinos[i].id ){
-            console.log(dinos[i]);
             dinos.splice(i, 1)
-            console.log(i);
         }
     }
     mostrarTodos()
