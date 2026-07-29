@@ -119,7 +119,7 @@ function excluirDino(){
     let id = Number(document.getElementById('input-id').value)
     
     for(let i = 0; i<dinos.length; i++){
-        if(id == dinos[i].id ){
+        if(id == dinos[i].id ){//verifica se o id que o usuario digitou é o mesmo da array dinos que ta passando
             dinos.splice(i, 1)
         }
     }
